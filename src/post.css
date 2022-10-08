@@ -1,0 +1,36 @@
+.post{
+    display:flex;
+    flex-direction: row;
+    padding: 0 40px 0 40px;
+}
+
+
+.post__pic{
+    margin-right: 30px; 
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 80px;
+}
+
+.profile__wrapper{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content__wrapper{
+    border: 1px solid black;
+    padding-left: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.post__title{
+    color: rgb(64, 0, 255);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
