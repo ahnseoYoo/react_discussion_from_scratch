@@ -10,16 +10,27 @@ const Posts = () => {
     let postPerPage = 10;
     let postCount = agoraStatesDiscussions.length;
     let pageCount = Math.ceil(postCount/postPerPage);
-    let result = [];
+    let pages = [];
+    for (let i = 1; i < pageCount + 1; i++) {
+        pages.push(i);
+    }
     const[pageState,setPageState] = useState(1);
+    const[frontBack, setFrontBack] = useState(null);
 
     const handlePageClick = event => {
         setPageState(event.target.textContent);
     } 
-   
-    for (let i = 1; i < pageCount + 1; i++) {
-        result.push(i);
+
+    const frontOrBack = event => {
+        if(event.target.textContent === "<" && pageState > 1){
+            setPageState(pageState - 1);
+        }
+        else if(event.target.textContent === ">" && pageState < pages.length){
+            setPageState(pageState + 1);
+        }
     }
+   
+
 
     return (
         <div>
@@ -30,9 +41,9 @@ const Posts = () => {
 
             }
             <div className='pageIcons'>
-                <button className={`button<`} onClick={handlePageClick}>{"<"}</button>
-                {result.map((element) => <button className={`button${element}`} onClick={handlePageClick}>{element}</button>)}
-                <button className={`button>`} onClick={handlePageClick}>{">"}</button>
+                <button className={`button<`} onClick={frontOrBack}>{"<"}</button>
+                {pages.map((element) => <button className={`button${element}`} onClick={handlePageClick}>{element}</button>)}
+                <button className={`button>`} onClick={frontOrBack}>{">"}</button>
 
             </div>
         </div>  
