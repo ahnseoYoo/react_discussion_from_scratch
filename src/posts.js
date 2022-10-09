@@ -43,12 +43,11 @@ const Posts = () => {
             title: content,
             createdAt: new Date(),
         }
-        let dataArr = [post, ...JSON.parse(localStorage.obj)];
+        let dataArr = [post, ...agoraStatesDiscussions];
         setNewPost(dataArr);
         agoraStatesDiscussions.unshift(post);
         setPageState(1);
         localStorage.setItem('obj', JSON.stringify(dataArr));
-
     }
 
 
@@ -73,11 +72,10 @@ const Posts = () => {
             <div className='Posts__postList'>
 
             {pageState? //클릭한 페이지에 따른 조건부 렌더링
-                    (<div className = "posts">{JSON.parse(localStorage.obj).slice((pageState-1)*postPerPage, pageState * postPerPage).map((post) => <Post data = {post}/>)}
-                    {`total post count: ${JSON.parse(localStorage.obj).length}`}</div>)
-                    :null}  
+                    (<div className = "posts">{agoraStatesDiscussions.slice((pageState-1)*postPerPage, pageState * postPerPage).map((post) => <Post data = {post}/>)}
+                    {`total post count: ${agoraStatesDiscussions.length}`}</div>)
+                    :null} 
 
-                {/* <div className = "posts">{JSON.parse(localStorage.obj).map((post) => <Post data = {post} />)}</div> */}
  
             </div>
             <div className='Posts__pageIcons'> {/*페이지 아이콘*/}
