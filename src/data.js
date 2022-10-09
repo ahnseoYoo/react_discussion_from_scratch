@@ -791,7 +791,7 @@ let agoraStatesDiscussions = [
 ]
 
 if(localStorage.length !== 0){
-  agoraStatesDiscussions = [...JSON.parse(localStorage.obj),...agoraStatesDiscussions];
+  agoraStatesDiscussions = [...JSON.parse(localStorage.obj)];
 }
 
 

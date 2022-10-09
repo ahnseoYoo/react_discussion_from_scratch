@@ -2,7 +2,7 @@ import React from 'react';
 import './post.css';
 
 const Post = ({data}) => {
-    const parsedDate = new Date(data.createdAt).toLocaleDateString('ko-kr')
+    const parsedDate = new Date(data.createdAt).toLocaleDateString('ko-kr');
 
     return (
         <ul className="post" key = {data.id}>
@@ -19,7 +19,7 @@ const Post = ({data}) => {
                     {data.title}
                 </div>
                 <div className = "post__date">
-                    {Date.createdAt}
+                    {data.createdAt}
                 </div>
             </div>
         </ul>

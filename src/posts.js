@@ -6,9 +6,6 @@ import Post from "./post.js";
 
 const Posts = () => {
 
-    // localStorage.setItem('obj',JSON.stringify(agoraStatesDiscussions));
- 
-
     let postPerPage = 10; // 한 페이지에 표시할 글 수
     let postCount = agoraStatesDiscussions.length; // 모든 글 수
     let pageCount = Math.ceil(postCount/postPerPage); // 페이지 수
@@ -37,11 +34,11 @@ const Posts = () => {
 
     const submitNewPost =  (event) => {
         let post = {
-            key: 0,
+            key: agoraStatesDiscussions.length,
             avatarUrl: "https://img.seoul.co.kr/img/upload/2021/05/03/SSI_20210503113234_O2.jpg",
             author: username,
             title: content,
-            createdAt: new Date(),
+            createdAt: `${new Date()}`,
         }
         let dataArr = [post, ...agoraStatesDiscussions];
         setNewPost(dataArr);
