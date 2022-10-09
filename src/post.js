@@ -8,7 +8,7 @@ const Post = ({data}) => {
         <ul className="post" key = {data.id}>
             <div className = "profile__wrapper">
                 <div className= "post__profile">
-                    <img className="post__pic" src={data.avatarUrl} />
+                    <img className="post__pic" src={data.avatarUrl} alt="img"/>
                 </div>
             </div>
             <div className='content__wrapper'>
@@ -22,7 +22,6 @@ const Post = ({data}) => {
                     {Date.createdAt}
                 </div>
             </div>
-
         </ul>
     )
 }

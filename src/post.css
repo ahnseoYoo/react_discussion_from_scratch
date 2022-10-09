@@ -10,6 +10,8 @@
     border: 1px solid red;
     border-radius: 50%;
     width: 80px;
+    height: 80px;
+    object-fit: cover;
 }
 
 .profile__wrapper{
@@ -29,6 +31,7 @@
 }
 
 .post__title{
+    text-align: left;
     color: rgb(64, 0, 255);
     display: flex;
     justify-content: flex-start;
